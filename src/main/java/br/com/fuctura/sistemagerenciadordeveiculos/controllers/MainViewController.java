@@ -15,6 +15,7 @@ import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.MenuItem;
 import javafx.scene.control.ScrollPane;
 import javafx.scene.layout.VBox;
+import javafx.stage.Stage;
 
 public class MainViewController implements Initializable {
 
@@ -32,7 +33,7 @@ public class MainViewController implements Initializable {
 
 	@FXML
 	public void onMenuItemFrenteDeLojaAction() {
-		System.out.println("onMenuItemFrenteDeLojaAction");
+		loadView("/gui/FrentedeLojaView.fxml", "Sistema Gerenciador de Veículos - Frente de Loja");
 	}
 
 	@FXML
@@ -47,7 +48,7 @@ public class MainViewController implements Initializable {
 
 	@FXML
 	public void onMenuItemSobreAction() {
-		loadView("/gui/Sobre.fxml");
+		loadView("/gui/SobreView.fxml", "Sistema Gerenciador de Veículos - Sobre");
 	}
 
 	@Override
@@ -55,7 +56,7 @@ public class MainViewController implements Initializable {
 
 	}
 
-	private synchronized void loadView(String absoluteName) {
+	private synchronized void loadView(String absoluteName, String title) {
 		try {
 			FXMLLoader loader = new FXMLLoader(getClass().getResource(absoluteName));
 			VBox newVBox = loader.load();
@@ -67,6 +68,9 @@ public class MainViewController implements Initializable {
 			mainVBox.getChildren().clear();
 			mainVBox.getChildren().add(mainMenu);
 			mainVBox.getChildren().addAll(newVBox.getChildren());
+
+			Stage stage = (Stage) Main.getMainScene().getWindow();
+			stage.setTitle(title);
 
 		} catch (IOException e) {
 			Alerts.showAlert("IO Exception", "Erro ao carregar a página", e.getMessage(), AlertType.ERROR);
