@@ -1,10 +1,14 @@
 package br.com.fuctura.sistemagerenciadordeveiculos.controllers;
 
 import java.net.URL;
+import java.util.List;
 import java.util.ResourceBundle;
 
 import br.com.fuctura.sistemagerenciadordeveiculos.Main;
 import br.com.fuctura.sistemagerenciadordeveiculos.entities.Veiculo;
+import br.com.fuctura.sistemagerenciadordeveiculos.services.VeiculoService;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
@@ -14,6 +18,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class VeiculoViewController implements Initializable {
+
+	private VeiculoService service;
 
 	@FXML
 	private TableView<Veiculo> tableViewVeiculo;
@@ -36,9 +42,15 @@ public class VeiculoViewController implements Initializable {
 	@FXML
 	private Button btNovo;
 
+	private ObservableList<Veiculo> obsList;
+
 	@FXML
 	public void onBtNovoAction() {
 		System.out.println("onBtNovoAction");
+	}
+
+	public void setVeiculoService(VeiculoService service) {
+		this.service = service;
 	}
 
 	@Override
@@ -55,6 +67,15 @@ public class VeiculoViewController implements Initializable {
 
 		Stage stage = (Stage) Main.getMainScene().getWindow();
 		tableViewVeiculo.prefHeightProperty().bind(stage.heightProperty());
+	}
+
+	public void updateTableView() {
+		if (service == null) {
+			throw new IllegalStateException("O service está nulo");
+		}
+		List<Veiculo> list = service.findAll();
+		obsList = FXCollections.observableArrayList(list);
+		tableViewVeiculo.setItems(obsList);
 	}
 
 }

@@ -33,7 +33,7 @@ public class MainViewController implements Initializable {
 
 	@FXML
 	public void onMenuItemFrenteDeLojaAction() {
-		loadView("/gui/FrentedeLojaView.fxml", "Sistema Gerenciador de Veículos - Frente de Loja");
+		loadView("/view/FrentedeLojaView.fxml", "Sistema Gerenciador de Veículos - Frente de Loja");
 	}
 
 	@FXML
@@ -43,12 +43,13 @@ public class MainViewController implements Initializable {
 
 	@FXML
 	public void onMenuItemSairAction() {
-		System.out.println("onMenuItemSairAction");
+		Stage stage = (Stage) Main.getMainScene().getWindow();
+		stage.close();
 	}
 
 	@FXML
 	public void onMenuItemSobreAction() {
-		loadView("/gui/SobreView.fxml", "Sistema Gerenciador de Veículos - Sobre");
+		loadView("/view/SobreView.fxml", "Sistema Gerenciador de Veículos - Sobre");
 	}
 
 	@Override

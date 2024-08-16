@@ -6,6 +6,7 @@ import java.util.ResourceBundle;
 
 import br.com.fuctura.sistemagerenciadordeveiculos.Main;
 import br.com.fuctura.sistemagerenciadordeveiculos.controllers.utils.Alerts;
+import br.com.fuctura.sistemagerenciadordeveiculos.services.VeiculoService;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
@@ -24,7 +25,7 @@ public class FrenteDeLojaViewController implements Initializable {
 
 	@FXML
 	private void onBtVeiculoAction() throws IOException {
-		loadView("/gui/VeiculoView.fxml",
+		loadView("/view/VeiculoView.fxml",
 				"Sistema Gerenciador de Veículos - Veículos");
 	}
 
@@ -49,6 +50,10 @@ public class FrenteDeLojaViewController implements Initializable {
 
 			Stage stage = (Stage) Main.getMainScene().getWindow();
 			stage.setTitle(title);
+			
+			VeiculoViewController controller = loader.getController();
+			controller.setVeiculoService(new VeiculoService());
+			controller.updateTableView();
 
 		} catch (IOException e) {
 			Alerts.showAlert("IO EXception", "Erro ao carregar a página", e.getMessage(), AlertType.ERROR);
