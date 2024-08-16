@@ -20,10 +20,34 @@ import javafx.stage.Stage;
 public class MainViewController implements Initializable {
 
 	@FXML
-	private MenuItem menuItemFrenteDeLoja;
+	private MenuItem menuItemVeiculoFrenteDeLoja;
 
 	@FXML
-	private MenuItem menuItemManutencaoNoCadastro;
+	private MenuItem menuItemVeiculoManutencaoNoCadastro;
+
+	@FXML
+	private MenuItem menuItemLojaFrenteDeLoja;
+
+	@FXML
+	private MenuItem menuItemLojaManutencaoNoCadastro;
+
+	@FXML
+	private MenuItem menuItemVendedorFrenteDeLoja;
+
+	@FXML
+	private MenuItem menuItemVendedorManutencaoNoCadastro;
+
+	@FXML
+	private MenuItem menuItemClienteFrenteDeLoja;
+
+	@FXML
+	private MenuItem menuItemClienteManutencaoNoCadastro;
+
+	@FXML
+	private MenuItem menuItemVendasFrenteDeLoja;
+
+	@FXML
+	private MenuItem menuItemVendasManutencaoNoCadastro;
 
 	@FXML
 	private MenuItem menuItemSair;
@@ -32,13 +56,53 @@ public class MainViewController implements Initializable {
 	private MenuItem menuItemSobre;
 
 	@FXML
-	public void onMenuItemFrenteDeLojaAction() {
-		loadView("/view/FrentedeLojaView.fxml", "Sistema Gerenciador de Veículos - Frente de Loja");
+	public void onMenuItemVeiculoFrenteDeLojaAction() {
+		loadView("/view/VeiculoFrenteDeLojaView.fxml", "Sistema Gerenciador de Veículos - Frente de Loja");
 	}
 
 	@FXML
-	public void onMenuItemManutencaoNoCadastroAction() {
-		System.out.println("onMenuItemManutencaoNoCadastroAction");
+	public void onMenuItemVeiculoManutencaoNoCadastroAction() {
+		loadView("/view/VeiculoManutencaoNoCadastroView.fxml", "Sistema Gerenciador de Veículos - Manutenção no Cadastro");
+	}
+
+	@FXML
+	public void onMenuItemLojaFrenteDeLojaAction() {
+		System.out.println("onMenuItemLojaFrenteDeLojaAction");
+	}
+
+	@FXML
+	public void onMenuItemLojaManutencaoNoCadastroAction() {
+		System.out.println("onMenuItemLojaManutencaoNoCadastroAction");
+	}
+
+	@FXML
+	public void onMenuItemVendedorFrenteDeLojaAction() {
+		System.out.println("onMenuItemVendedorFrenteDeLojaAction");
+	}
+
+	@FXML
+	public void onMenuItemVendedorManutencaoNoCadastroAction() {
+		System.out.println("onMenuItemVendedorManutencaoNoCadastroAction");
+	}
+
+	@FXML
+	public void onMenuItemClienteFrenteDeLojaAction() {
+		System.out.println("onMenuItemClienteFrenteDeLojaAction");
+	}
+
+	@FXML
+	public void onMenuItemClienteManutencaoNoCadastroAction() {
+		System.out.println("onMenuItemClienteManutencaoNoCadastroAction");
+	}
+
+	@FXML
+	public void onMenuItemVendasFrenteDeLojaAction() {
+		System.out.println("onMenuItemVendasFrenteDeLojaAction");
+	}
+
+	@FXML
+	public void onMenuItemVendasManutencaoNoCadastroAction() {
+		System.out.println("onMenuItemVendasManutencaoNoCadastroAction");
 	}
 
 	@FXML

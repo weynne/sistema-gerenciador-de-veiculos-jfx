@@ -14,11 +14,27 @@
 					<menus>
 						<Menu mnemonicParsing="false" text="Arquivo">
 							<items>
-								<MenuItem fx:id="menuItemFrenteDeLoja" mnemonicParsing="false" onAction="#onMenuItemFrenteDeLojaAction" text="Frente de Loja" />
-								<MenuItem fx:id="menuItemManutencaoNoCadastro" mnemonicParsing="false" onAction="#onMenuItemManutencaoNoCadastroAction" text="Manutenção no Cadastro" />
 								<MenuItem fx:id="menuItemSair" mnemonicParsing="false" onAction="#onMenuItemSairAction" text="Sair" />
 							</items>
 						</Menu>
+                  <Menu mnemonicParsing="false" text="Frente de Loja">
+                    <items>
+								<MenuItem fx:id="menuItemVeiculoFrenteDeLoja" mnemonicParsing="false" onAction="#onMenuItemVeiculoFrenteDeLojaAction" text="Veículo" />
+                      <MenuItem fx:id="menuItemLojaFrenteDeLoja" mnemonicParsing="false" onAction="#onMenuItemLojaFrenteDeLojaAction" text="Loja" />
+                        <MenuItem fx:id="menuItemVendedorFrenteDeLoja" mnemonicParsing="false" onAction="#onMenuItemVendedorFrenteDeLojaAction" text="Vendedor" />
+                        <MenuItem fx:id="menuItemClienteFrenteDeLoja" mnemonicParsing="false" onAction="#onMenuItemClienteFrenteDeLojaAction" text="Cliente" />
+                        <MenuItem fx:id="menuItemVendasFrenteDeLoja" mnemonicParsing="false" onAction="#onMenuItemVendasFrenteDeLojaAction" text="Vendas" />
+                    </items>
+                  </Menu>
+                  <Menu mnemonicParsing="false" text="Manutenção no Cadastro">
+                    <items>
+								<MenuItem fx:id="menuItemVeiculoManutencaoNoCadastro" mnemonicParsing="false" onAction="#onMenuItemVeiculoManutencaoNoCadastroAction" text="Veículo" />
+                        <MenuItem fx:id="menuItemLojaManutencaoNoCadastro" mnemonicParsing="false" onAction="#onMenuItemLojaManutencaoNoCadastroAction" text="Loja" />
+                      <MenuItem fx:id="menuItemVendedorManutencaoNoCadastro" mnemonicParsing="false" onAction="#onMenuItemVendedorManutencaoNoCadastroAction" text="Vendedor" />
+                        <MenuItem fx:id="menuItemClienteManutencaoNoCadastro" mnemonicParsing="false" onAction="#onMenuItemClienteManutencaoNoCadastroAction" text="Cliente" />
+                        <MenuItem fx:id="menuItemVendasManutencaoNoCadastro" mnemonicParsing="false" onAction="#onMenuItemVendasManutencaoNoCadastroAction" text="Vendas" />
+                    </items>
+                  </Menu>
 						<Menu mnemonicParsing="false" text="Ajuda">
 							<items>
 								<MenuItem fx:id="menuItemSobre" mnemonicParsing="false" onAction="#onMenuItemSobreAction" text="Sobre" />
